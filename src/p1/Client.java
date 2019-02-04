@@ -4,9 +4,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 import Interfaces.Animal;
-import Interfaces.AnimalFile;
 import Interfaces.CabinetVeterinaire;
-import Interfaces.Species;
 
 public class Client {
 	
@@ -32,7 +30,7 @@ public class Client {
 			Animal result = stub.searchAnimal("Courage");
 			System.out.println("resultat 1: " + result.printAnimal());
 			
-			stub.addAnimal("Pero", "Carla", "Parrot", "Timneh");
+			stub.addAnimal("Pero", "Carla", new SpeciesClient("Parrot", 30), "Timneh");
 			Animal result2 = stub.searchAnimal("Pero");
 			System.out.println("Searching for the newly added animal");
 			System.out.println(result2.printAnimal());
