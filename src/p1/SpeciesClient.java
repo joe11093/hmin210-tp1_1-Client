@@ -17,6 +17,7 @@ public class SpeciesClient extends Species{
 	}
 
 	public SpeciesClient(String name, int average_size) {
+		super();
 		this.name = name;
 		this.average_size = average_size;
 	}
